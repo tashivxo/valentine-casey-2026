@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import HeartConfetti from "@/components/HeartConfetti";
-import cdImage from "@/assets/playlistvday.jpeg";
 import djImage from "@/assets/valentine-dj.jpg";
 
 const SuccessPage = () => {
@@ -43,19 +42,6 @@ const SuccessPage = () => {
 
         <p className="font-handwritten text-3xl md:text-4xl text-valentine-peach">
           Love 💕
-        </p>
-
-        {/* CD Case Image */}
-        <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-lg overflow-hidden shadow-2xl border-4 border-secondary hover:scale-105 transition-transform duration-500">
-          <img
-            src={cdImage}
-            alt="Songs to listen to when you're in love"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        <p className="font-handwritten text-2xl text-primary">
-          ♥ Songs to listen to when you're in love ♥
         </p>
 
         {/* Skeleton DJ Valentine Image */}
