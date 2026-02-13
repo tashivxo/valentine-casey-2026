@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 100% 97%;
+    --foreground: 350 30% 20%;
+
+    --card: 10 60% 95%;
+    --card-foreground: 350 30% 20%;
+
+    --popover: 10 100% 97%;
+    --popover-foreground: 350 30% 20%;
+
+    --primary: 350 78% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 350 60% 85%;
+    --secondary-foreground: 350 30% 20%;
+
+    --muted: 20 30% 90%;
+    --muted-foreground: 350 15% 45%;
+
+    --accent: 25 60% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 350 30% 85%;
+    --input: 350 30% 85%;
+    --ring: 350 78% 55%;
+
+    --radius: 1rem;
+
+    --valentine-red: 350 78% 55%;
+    --valentine-pink: 340 80% 75%;
+    --valentine-blush: 10 100% 97%;
+    --valentine-peach: 25 60% 65%;
+    --valentine-cream: 30 80% 95%;
+    --valentine-deep: 345 60% 35%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 345 40% 8%;
+    --foreground: 10 60% 92%;
+    --card: 345 35% 12%;
+    --card-foreground: 10 60% 92%;
+    --popover: 345 35% 12%;
+    --popover-foreground: 10 60% 92%;
+    --primary: 350 78% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 345 30% 20%;
+    --secondary-foreground: 10 60% 92%;
+    --muted: 345 20% 18%;
+    --muted-foreground: 350 15% 60%;
+    --accent: 25 50% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 345 20% 20%;
+    --input: 345 20% 20%;
+    --ring: 350 78% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+
+@layer components {
+  .font-handwritten {
+    font-family: 'Caveat', cursive;
+  }
+}
+
+@layer utilities {
+  @keyframes float-heart {
+    0% {
+      transform: translateY(100vh) rotate(0deg) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(90vh) rotate(15deg) scale(1);
+    }
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(45deg) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulse-heart {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes bounce-gentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .animate-float-heart {
+    animation: float-heart linear infinite;
+  }
+
+  .animate-pulse-heart {
+    animation: pulse-heart 1.5s ease-in-out infinite;
+  }
+
+  .animate-confetti-fall {
+    animation: confetti-fall linear infinite;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}

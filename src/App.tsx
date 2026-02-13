@@ -1,0 +1,32 @@
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import AreYouSurePage from "./pages/AreYouSurePage";
+import SuccessPage from "./pages/SuccessPage";
+import LoveNotFoundPage from "./pages/LoveNotFoundPage";
+import NotFound from "./pages/NotFound";
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter basename="/valentine-casey-2025">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/yes" element={<SuccessPage />} />
+          <Route path="/are-you-sure" element={<AreYouSurePage />} />
+          <Route path="/404-love" element={<LoveNotFoundPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export default App;
